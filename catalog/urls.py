@@ -10,3 +10,7 @@ urlpatterns = [
     path('author/<int:pk>',
          views.AuthorDetailView.as_view(), name='author-detail'),
 ]
+
+urlpatterns += [
+    re_path(r'^mybooks/$', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+]
